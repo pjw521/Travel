@@ -2,8 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import './assets/styles/reset.css';
-import "./assets/styles/border.css"
+import '@styles/reset.css';
+import "@styles/border.css";
+import '@styles/iconfont.css';
 import fastClick from "fastclick";
 
 
