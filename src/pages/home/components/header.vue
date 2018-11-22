@@ -1,4 +1,3 @@
-import '../../../assets/styles/border.css';
 <template>
     <div class="header">
         <div class="header-left"><i class="iconfont back-icon">&#xe624;</i></div>
