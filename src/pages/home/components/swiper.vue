@@ -32,6 +32,8 @@
     }
 </script>   
 <style lang="stylus" scoped>
+    .wrapper
+        margin-top .1rem
     .wrapper >>> .swiper-pagination-bullet-active
         background #fff 
     .wrapper
