@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <swiper :options="swiperOption">
+        <swiper :options="swiperOption" v-if="swiperList.length">
             <swiper-slide v-for="item in swiperList" :key="item.id">
                 <img class="swiper-img" :src="item.imgUrl" alt="">
             </swiper-slide>
@@ -11,22 +11,16 @@
 <script>
     export default{
         name:'HomeSwiper',
+        props:{
+            swiperList:Array
+        },
         data:function(){
             return {
                 swiperOption:{
                     pagination:'.swiper-pagination',
-                    loop:true
-                },
-                swiperList:[
-                    {
-                        id:'0001',
-                        imgUrl:'//img1.qunarzz.com/qs/1811/3f/85a00499e2e0802.jpg'
-                    },
-                    {
-                        id:'0002',
-                        imgUrl:'//img1.qunarzz.com/qs/1811/c0/6257518b78a73602.jpg'
-                    }
-                ]
+                    loop:true,
+                    autoplay: 3000,
+                }
             }
         }
     }
@@ -35,12 +29,12 @@
     .wrapper
         margin-top .1rem
     .wrapper >>> .swiper-pagination-bullet-active
-        background #fff 
+        background #fff
     .wrapper
         width 100%
         height 0
         overflow hidden
-        padding-bottom 25.6%
+        padding-bottom 31.25%
         background #eee
         .swiper-img
             width 100%

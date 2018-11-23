@@ -1,4 +1,3 @@
-import { defaults, info } from 'autoprefixer';
 <template>
     <div>
         <div class="title">热销推荐</div>
@@ -19,29 +18,8 @@ import { defaults, info } from 'autoprefixer';
 <script>
     export default{
         name:'Recommend',
-        data(){
-            return{
-                recommendList:[
-                    {
-                        id:"00001",
-                        imgUrl:'https://imgs.qunarzz.com/p/tts5/1811/8a/aa40b8ca73bf8102.jpg_r_240x160x90_12370edb.jpg',
-                        title:"大连圣亚海洋世界",
-                        desc:"浪漫大连首站，浪漫的海洋主题公园"
-                    },
-                    {
-                        id:"00002",
-                        imgUrl:'https://imgs.qunarzz.com/p/tts5/1811/8a/aa40b8ca73bf8102.jpg_r_240x160x90_12370edb.jpg',
-                        title:"大连圣亚海洋世界",
-                        desc:"浪漫大连首站，浪漫的海洋主题公园"
-                    },
-                    {
-                        id:"00003",
-                        imgUrl:'https://imgs.qunarzz.com/p/tts5/1811/8a/aa40b8ca73bf8102.jpg_r_240x160x90_12370edb.jpg',
-                        title:"大连圣亚海洋世界",
-                        desc:"浪漫大连首站，浪漫的海洋主题公园"
-                    },
-                ]
-            }
+        props:{
+            recommendList:Array
         }
     }
 </script>

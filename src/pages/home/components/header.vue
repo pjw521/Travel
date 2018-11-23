@@ -2,12 +2,15 @@
     <div class="header">
         <div class="header-left"><i class="iconfont back-icon">&#xe624;</i></div>
         <div class="header-input"><i class="iconfont">&#xe632;</i>内容</div>
-        <div class="header-right">城市<i class="iconfont arrow-icon">&#xe64a;</i></div>
+        <div class="header-right">{{city}}<i class="iconfont arrow-icon">&#xe64a;</i></div>
     </div>
 </template>
 <script>
     export default{
-        name:'HomeHeader'
+        name:'HomeHeader',
+        props:{
+            city:String
+        }
     }
 </script>
 <style lang="stylus" scoped>
