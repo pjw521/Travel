@@ -2,8 +2,8 @@
     <div>
         <city-header></city-header>
         <citySearch></citySearch>
-        <cityList :cities="cities" :hotCities="hotCities"></cityList>
-        <cityAlphabet :cities="cities" ></cityAlphabet>
+        <cityList :cities="cities" :hotCities="hotCities" :letter="letter"></cityList>
+        <cityAlphabet :cities="cities" @changeLetter="handleLetter" ></cityAlphabet>
     </div>
 </template>
 <script>
@@ -15,6 +15,11 @@ import cityAlphabet from "./components/alphabet.vue"
 
     export default{
         name:"city",
+        data(){
+            return{
+                letter:''
+            }
+        },
         components:{
             cityHeader,
             citySearch,
@@ -24,17 +29,20 @@ import cityAlphabet from "./components/alphabet.vue"
         data(){
             return{
                 cities:{},
-                hotCities:[]
+                hotCities:[],
+                letter:""
             }
         },
         methods:{
             handleRes(res){
                 if(res.data.ret){
                     let data = res.data.data;
-                    console.log(data);
                     this.cities = data.cities;
                     this.hotCities = data.hotCities;
                 }
+            },
+            handleLetter(letter){
+                this.letter = letter;
             }
         },
         mounted(){

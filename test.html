@@ -27,10 +27,12 @@
         <div class="div2"></div>
     </div>
     <script>
-        var a = {a:1,b:2};
-        if(a){
-            console.log(a.length);
-        }
+        var timer = null;
+        timer = setTimeout(function(){
+            console.log(1)
+        },10000)
+        clearTimeout(timer);
+        console.log(timer);
     </script>
 </body>
 </html>
