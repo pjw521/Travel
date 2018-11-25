@@ -1,6 +1,6 @@
 <template>
     <div>
-        <home-header :city="city"></home-header>
+        <home-header></home-header>
         <HomeSwiper :swiperList="swiperList"></HomeSwiper>
         <HomeIcons :iconList="iconList"></HomeIcons>
         <HomeRecommend :recommendList="recommendList"></HomeRecommend>
@@ -29,7 +29,6 @@ import HomeWeekend from "./components/weekend.vue"
             },
             data(){
                 return{
-                    city:'',
                     iconList:[],
                     recommendList:[],
                     swiperList:[],
@@ -45,7 +44,6 @@ import HomeWeekend from "./components/weekend.vue"
                 let result = res.data;
                 if(result.ret){
                     let data = result.data;
-                    this.city = data.city;
                     this.iconList = data.iconList;
                     this.recommendList = data.recommendList;
                     this.swiperList = data.swiperList;
