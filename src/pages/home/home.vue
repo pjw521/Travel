@@ -32,12 +32,13 @@ import HomeWeekend from "./components/weekend.vue"
                     iconList:[],
                     recommendList:[],
                     swiperList:[],
-                    weekendList:[]
+                    weekendList:[],
+                    lastCity:[]
                 }
             },
         methods:{
             getHomeInfo(){
-                axios.get("/api/index.json")
+                axios.get("/api/index.json?city=" + this.$store.state.city)
                 .then(this.getHomeinfoSucc)
             },
             getHomeinfoSucc(res){
@@ -53,6 +54,13 @@ import HomeWeekend from "./components/weekend.vue"
         },
         mounted(){
             this.getHomeInfo();
+            this.lastCity = this.$store.state.city;
+        },
+        activated(){
+            if(this.lastCity !== this.$store.state.city){
+                this.getHomeInfo();
+                this.lastCity = this.$store.state.city
+            }
         }
     }
 </script>
