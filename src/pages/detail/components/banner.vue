@@ -12,7 +12,9 @@
                 </div>
             </div>
         </div>
-        <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @change="change"></CommonGallary>
+        <transition>
+            <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @change="change"></CommonGallary>
+        </transition>
     </div>
 </template>
 <script>
@@ -75,4 +77,10 @@ import CommonGallary from "@common/gallary/gallary"
                 font-size .24rem
                 .banner-icon 
                  font-size .24rem
+    .v-enter, .v-leave-to{
+        opacity 0
+    }
+    .v-enter-active,.v-leave-active{
+        transition opacity .5s
+    }
 </style>
