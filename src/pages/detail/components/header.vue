@@ -25,6 +25,7 @@
         methods:{
             showHeader(){
                 let top = document.documentElement.scrollTop;
+                console.log(1);
                 if(top > 60){   
                     this.show = false;
                     let opacity = (top / 160).toFixed(1); 
@@ -35,10 +36,10 @@
                 }
             }
         },
-        mounted(){
+        activated(){
             window.addEventListener("scroll",this.showHeader)
         },
-        beforeDestroy(){
+        deactivated(){
             window.removeEventListener('scroll',this.showHeader)
         }
 
