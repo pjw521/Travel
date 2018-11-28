@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="header-tbs" v-show="show">
+        <router-link to="/" tag="div" class="header-tbs" v-show="show">
             <i class="iconfont header-abs-back">&#xe624;</i>
-        </div>
+        </router-link>
         <div class="header-fixed" v-show="!show" :style="style">
             <router-link to="/">
                 <div class="header-left"><i class="iconfont header-fixed-back">&#xe624;</i></div>
@@ -25,7 +25,6 @@
         methods:{
             showHeader(){
                 let top = document.documentElement.scrollTop;
-                console.log(1);
                 if(top > 60){   
                     this.show = false;
                     let opacity = (top / 160).toFixed(1); 

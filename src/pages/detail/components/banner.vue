@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="banner" @click="showGallary=true">
-            <img class="banner-img" src="http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg" alt="">
+            <img class="banner-img" :src="bannerImg" alt="">
             <div class="banner-info">
                 <div class="banner-title">
-                    大连圣亚海洋世界
+                    {{sightName}}
                 </div>
                 <div class="banner-number" >
                     <i class="iconfont banner-icon">&#xe616;</i>
-                    39
+                    {{gallaryImgs.length}}
                 </div>
             </div>
         </div>
-        <CommonGallary :imgs="imgs" v-show="showGallary" @change="change"></CommonGallary>
+        <CommonGallary :imgs="gallaryImgs" v-show="showGallary" @change="change"></CommonGallary>
     </div>
 </template>
 <script>
@@ -20,10 +20,10 @@ import CommonGallary from "@common/gallary/gallary"
 
     export default{
         name:"DetailBanner",
+        props:["sightName","bannerImg","gallaryImgs"],
         data(){
             return{
-                showGallary:false,
-                imgs:["http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg","http://img1.qunarzz.com/piao/fusion/1801/1a/94428c6dea109402.jpg_640x200_2cf590d8.jpg"]
+                showGallary:false
             }
         },
         methods:{
